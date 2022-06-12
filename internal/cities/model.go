@@ -1,6 +1,6 @@
 package cities
 
-type city struct {
+type City struct {
 	Id   int
 	Name string
 	UF   string
