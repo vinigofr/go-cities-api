@@ -1,7 +1,7 @@
 package cities
 
 type City struct {
-	Id   int
-	Name string
-	UF   string
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+	UF   string `json:"uf"`
 }

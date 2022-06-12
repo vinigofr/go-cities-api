@@ -7,13 +7,20 @@ type Repository interface {
 
 type repository struct{}
 
+var Database []City
+var globalID = 1
+
 func NewRepository() Repository {
 	return &repository{}
 }
 
 func (repository) Create(name, uf string) (City, error) {
-	return City{}, nil
+	newCity := City{Id: globalID, Name: name, UF: uf}
+	Database = append(Database, newCity)
+	globalID++
+
+	return newCity, nil
 }
 func (repository) GetAll() ([]City, error) {
-	return []City{}, nil
+	return Database, nil
 }
