@@ -1,6 +1,8 @@
 package cities
 
-import "errors"
+import (
+	"errors"
+)
 
 type Service interface {
 	Create(name, uf string) (City, error)
@@ -28,7 +30,7 @@ func (s *service) Create(name, uf string) (City, error) {
 func (s *service) GetAll() ([]City, error) {
 	cities, err := s.repository.GetAll()
 	if err != nil {
-		return nil, errors.New("cannot get all cities")
+		return nil,  errors.New("cannot get all cities")
 	}
 
 	return cities, nil

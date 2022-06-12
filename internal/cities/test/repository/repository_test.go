@@ -27,7 +27,6 @@ func TestRepositoryGetAll(t *testing.T) {
 		byteExpected, _ := json.Marshal(result)
 
 		assert.Equal(t, string(byteExpected), string(byteResponse))
-		cities.Database = nil
 	})
 }
 
